@@ -1,0 +1,26 @@
+git.hashyl.net {
+
+    proxy / http://gitea:3000 {
+        transparent
+        header_upstream X-Marotagem  true
+        header_upstream Host  "git.hashyl.net"
+    }
+
+}
+
+web.dev.hashyl.net {
+    proxy / http://hash:5000 {
+        transparent
+        header_upstream X-Marotagem  true
+        header_upstream Host  "web.dev.hashyl.net"
+    }
+}
+
+parse.hashyl.net {
+
+    proxy / http://parse:1337 {
+        transparent
+        websocket
+        header_upstream -Origin
+    }
+}

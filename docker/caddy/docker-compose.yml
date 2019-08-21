@@ -1,0 +1,37 @@
+version: '3'
+services:
+  caddy:
+    image: "abiosoft/caddy:latest"
+    volumes:
+      - ./certs:/root/certs # to sync mkcert certificates to Caddy
+      - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
+    ports:
+      - "443:2015"
+    depends_on:
+     - parse
+
+  parse:
+    build: "./parse"
+    container_name: hash-parse
+    restart: "always"
+    ports:
+      - 1337:1337
+    environment:
+      POSTGRES_DB: "pmker"
+      POSTGRES_USER: "pmker"
+      POSTGRES_PASSWORD: "Pmkoo!!1123581321"
+
+
+  postgres:
+    build: "./docker/postgres"
+    container_name: hash-postgres
+    restart: "always"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: "pmker"
+      POSTGRES_USER: "pmker"
+      POSTGRES_PASSWORD: "Pmkoo!!1123581321"
+    volumes:
+      - /hash/data/postgresql:/var/lib/postgresql/data
+
