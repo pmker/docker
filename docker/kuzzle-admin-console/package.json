@@ -35,7 +35,7 @@
   
     "commander": "^2.15.1",
     "finalhandler": "^1.1.1",
-    "http-server": "^0.11.1",
+    "http-server": "^0.11.2",
     "serve-static": "^1.13.2"
   },
   "peerDependencies": {
@@ -78,7 +78,7 @@
     "eslint-stylish": "^0.2.0",
     "eventsource-polyfill": "^0.9.6",
     "expect.js": "^0.3.1",
-    "express": "^4.16.3",
+    "express": "^4.18.2",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
